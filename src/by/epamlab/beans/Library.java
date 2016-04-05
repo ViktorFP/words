@@ -13,7 +13,8 @@ public class Library {
 		words = new HashMap<>();
 	}
 
-	public static Library getInstance(String filePath, String pattern) throws FileNotFoundException {
+	public static Library getInstance(String filePath, String pattern)
+			throws FileNotFoundException {
 		Library library = new Library();
 		Scanner scanner = new Scanner(new File(filePath));
 		while (scanner.hasNextLine()) {
