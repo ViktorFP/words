@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import by.epamlab.Constants;
 import by.epamlab.beans.Library;
@@ -19,7 +20,8 @@ public class Runner {
 					Constants.DELIMITER_PATTERN);
 			// ---print all data---
 			System.out.println("All words:\n");
-			for (Entry<String, Integer> word : library.getDataLibrary().entrySet()) {
+			for (Entry<String, Integer> word : new TreeMap<>(
+					library.getDataLibrary()).entrySet()) {
 				System.out.println(word.getKey() + ": " + word.getValue());
 			}
 			// ---search data---
