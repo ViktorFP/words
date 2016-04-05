@@ -13,12 +13,12 @@ public class Library {
 		words = new HashMap<>();
 	}
 
-	public static Library getInstance(String filePath, String pattern)
+	public static Library getInstance(String filePath, String delimiter)
 			throws FileNotFoundException {
 		Library library = new Library();
 		Scanner scanner = new Scanner(new File(filePath));
 		while (scanner.hasNextLine()) {
-			String[] nextWord = scanner.nextLine().split(pattern);
+			String[] nextWord = scanner.nextLine().split(delimiter);
 			for (String word : nextWord) {
 				if (word.length() != 0) {
 					library.addWord(word);

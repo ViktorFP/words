@@ -13,7 +13,7 @@ public class Runner {
 		// ---reading data---
 		try {
 			library = Library.getInstance(Constants.FILE_PATH,
-					Constants.PATTERN);
+					Constants.DELIMITER_PATTERN);
 			// ---search data---
 			String str = "";
 			br = new BufferedReader(new InputStreamReader(System.in));
