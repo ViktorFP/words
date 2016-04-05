@@ -19,7 +19,7 @@ public class Runner {
 					Constants.DELIMITER_PATTERN);
 			// ---print all data---
 			System.out.println("All words:\n");
-			for (Entry<String, Integer> word : library.getLibrary().entrySet()) {
+			for (Entry<String, Integer> word : library.getDataLibrary().entrySet()) {
 				System.out.println(word.getKey() + ": " + word.getValue());
 			}
 			// ---search data---

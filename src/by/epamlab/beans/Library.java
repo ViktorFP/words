@@ -34,7 +34,7 @@ public class Library {
 		words.put(word, (count == null) ? 1 : count + 1);
 	}
 
-	public Map<String, Integer> getLibrary() {
+	public Map<String, Integer> getDataLibrary() {
 		return words;
 	}
 
