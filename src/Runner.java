@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Map.Entry;
 
 import by.epamlab.Constants;
 import by.epamlab.beans.Library;
@@ -10,14 +11,20 @@ public class Runner {
 	public static void main(String[] args) {
 		BufferedReader br = null;
 		Library library = null;
+		String str = "";
+
 		// ---reading data---
 		try {
 			library = Library.getInstance(Constants.FILE_PATH,
 					Constants.DELIMITER_PATTERN);
+			// ---print all data---
+			System.out.println("All words:\n");
+			for (Entry<String, Integer> word : library.getLibrary().entrySet()) {
+				System.out.println(word.getKey() + ": " + word.getValue());
+			}
 			// ---search data---
-			String str = "";
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println(Constants.QUIT_MESSAGE);
+			System.out.println("\n" + Constants.QUIT_MESSAGE);
 			do {
 				str = br.readLine();
 				int count = library.search(str);

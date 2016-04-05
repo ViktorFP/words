@@ -34,6 +34,10 @@ public class Library {
 		words.put(word, (count == null) ? 1 : count + 1);
 	}
 
+	public Map<String, Integer> getLibrary() {
+		return words;
+	}
+
 	public int search(String word) {
 		Integer count = words.get(word);
 		if (count != null) {
